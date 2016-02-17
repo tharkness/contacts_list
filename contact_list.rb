@@ -25,6 +25,16 @@ class ContactList
     puts "Enter name or email of person you are looking for: "
     search_peram = $stdin.gets.chomp
     Contact.search(search_peram)
+  when "update"
+    puts "Enter name, email to be updated followed by the id of the person to be updated."
+    name = $stdin.gets.chomp
+    email = $stdin.gets.chomp
+    id = $stdin.gets.chomp
+    Contact.update(name, email, id)
+  when "delete"
+    puts "Enter id of contact you wish to delete"
+    id = $stdin.gets.chomp
+    Contact.delete(id)
   else
     puts "no"
   end
